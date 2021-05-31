@@ -9,6 +9,6 @@
  ```                                                                                                     
 ---                                                                                                     
                                                                                                      
-This is a game that is made with JavaScript and powered by Node! It works completely in your own terminal! Just download the needed dependencies, open the files in a terminal and let the game begin!
+This is a game that is made with JavaScript and powered by Node! It completely works in your own terminal! Just download the needed dependencies, open the files in a terminal and let the game begin!
 
 # **⚠ IN DEVELOPMENT ⚠**
