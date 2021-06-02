@@ -1,0 +1,25 @@
+{
+  "name": "in-terminal-game",
+  "version": "1.0.0",
+  "description": "This is a game that is made with JavaScript and works completely in your own terminal! Just download the needed dependencies, open the files in a terminal and let the game begin!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iliannnn/In-Terminal-Game.git"
+  },
+  "author": "Iliannnn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Iliannnn/In-Terminal-Game/issues"
+  },
+  "homepage": "https://github.com/Iliannnn/In-Terminal-Game#readme",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "dotenv": "^10.0.0",
+    "mysql2": "^2.2.5",
+    "prompts": "^2.4.1"
+  }
+}
