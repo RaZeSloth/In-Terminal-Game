@@ -1,10 +1,6 @@
 (async () => {
 
-  const { login } = require('./functions/login')
-  const { register } = require('./functions/register')
-  const { settings} = require('./functions/settings')
-
-    const prompts = require('prompts')
+  prompts = require('prompts'), { login } = require('./functions/login'), { register } = require('./functions/register'), { settings} = require('./functions/settings')   
 
     const menu = await prompts([
         {
