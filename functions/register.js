@@ -1,7 +1,7 @@
 module.exports.register = function register() {
   (async () => {
 
-    chalk = require('chalk'), prompts = require('prompts'), { connection } = require('../database/db')
+    chalk = require('chalk'), prompts = require('prompts'), { connection } = require('../database/db'), { logout } = require('../functions/logout'), { settings } = require('../functions/settings'), { work } = require('../functions/work')
 
     var username = await prompts([{ type: 'text', name: 'value', message: `Create your username:` }]);
     console.clear()
@@ -72,12 +72,18 @@ module.exports.register = function register() {
       
       if (username.value && password.value && job.value) {
       
-      connection.query(`INSERT INTO Accounts VALUES ('${username.value}', '${password.value}', '${job.value}', '0')`, function(err) {
+      connection.query(`INSERT INTO Accounts VALUES ('${username.value}', '${password.value}', '${job.value}', '0', '1')`, function(err) {
         if (err) {
           return console.log(chalk.red('\nSomething went wrong while processing the data to the database!\nPossible causes:\n- You have already created an account with this username.\n- You do not have a MySQL server on your PC.\n- You have not modified the data in the .env file as requested.\n'))
         }
       })
       await console.log(chalk.green('Your account has been successfully created!'))
+
+      const menu = await prompts([{ type: 'select', name: 'value', message: 'What do you want to do now?', choices: [{ title: 'Log-Out', value: 'logout' }, { title: 'Settings', value: 'settings' }, { title: 'Go to work', value: 'work'}], initial: 1 }]);
+      console.clear()
+  
+      eval(menu.value)()
+
 
       } else {
         return console.log(chalk.red('\nYour account could not be created because not all data has been entered.\n'))
