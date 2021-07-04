@@ -1,3 +1,3 @@
 module.exports.login = function login() {
-    console.log('Not implemented yet')
+    console.log(chalk.red('Not implemented yet'))
 }
