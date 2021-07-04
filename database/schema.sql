@@ -6,11 +6,6 @@ CREATE TABLE Accounts (
     username VARCHAR(20) NOT NULL PRIMARY KEY,
     pass VARCHAR(20),
     job VARCHAR(20),
-    balance VARCHAR(20)
-);
-
-/* Active account table */
-
-CREATE TABLE ActiveAccount ( 
-    username VARCHAR(20) NOT NULL PRIMARY KEY
+    balance VARCHAR(20),
+    active BOOLEAN
 );
