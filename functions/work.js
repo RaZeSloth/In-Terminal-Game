@@ -1,3 +1,10 @@
 module.exports.work = function work() {
-    console.log(chalk.red('Not implemented yet'))
+    (async () => {
+
+        chalk = require('chalk'), prompts = require('prompts'), { connection } = require('../database/db')
+
+        console.log(chalk.red('Not implemented yet'))
+
+        
+    })();
 }
