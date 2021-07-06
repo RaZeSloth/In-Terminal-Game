@@ -84,9 +84,26 @@ module.exports.register = function register() {
 
           console.log(chalk.gray('- Register\n'))
           console.log(chalk.green('Your account has been successfully created!'))
+          console.log('↻ | Loading…')
+          setTimeout(async ()  => {
+              console.clear()
+              console.log(chalk.green('Your account has been successfully created!'))
+              console.log('↷ | Loading…')
 
-          const menu = await prompts([{ type: 'select', name: 'value', message: 'What do you want to do now?', choices: [{ title: 'Log-Out', value: 'logout' }, { title: 'Settings', value: 'settings' }, { title: 'Go to work', value: 'work' }], initial: 1 }]);
-          console.clear()
+              setTimeout(async ()  => {
+                  console.clear()
+                  console.log(chalk.green('Your account has been successfully created!'))
+                  console.log('↻ | Loading…')
+
+                  setTimeout(async ()  => {
+                    console.clear()
+                    console.log(chalk.gray('- Menu\n'))
+                    let choosemenu = await prompts([{ type: 'select', name: 'value', message: 'What do you want to do now?', choices: [{ title: 'Log out', value: 'logout' }, { title: 'Settings', value: 'settings' }, { title: 'Go to work', value: 'work' }], initial: 1 }]);
+                    console.clear()
+                    eval(choosemenu.value)()
+                  }, 500)
+              }, 500)
+          }, 500)
 
           eval(menu.value)()
 
