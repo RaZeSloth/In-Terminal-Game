@@ -14,17 +14,17 @@ module.exports.logout = function logout() {
                 console.clear()
                 console.log(chalk.green('Successfully logged out!'))
                 console.log('↻ | Loading…')
-                setTimeout(function () {
+                setTimeout(async ()  => {
                     console.clear()
                     console.log(chalk.green('Successfully logged out!'))
                     console.log('↷ | Loading…')
 
-                    setTimeout(function () {
+                    setTimeout(async ()  => {
                         console.clear()
                         console.log(chalk.green('Successfully logged out!'))
                         console.log('↻ | Loading…')
 
-                        setTimeout(function () {
+                        setTimeout(async ()  => {
                             menu()
                         }, 500)
                     }, 500)
@@ -33,7 +33,8 @@ module.exports.logout = function logout() {
 
         } else {
             console.clear()
-            let choosemenu = await prompts([{ type: 'select', name: 'value', message: 'What do you want to do now?', choices: [{ title: 'Log-Out', value: 'logout' }, { title: 'Settings', value: 'settings' }, { title: 'Go to work', value: 'work' }], initial: 1 }]);
+            console.log(chalk.gray('- Menu\n'))
+            let choosemenu = await prompts([{ type: 'select', name: 'value', message: 'What do you want to do now?', choices: [{ title: 'Log out', value: 'logout' }, { title: 'Settings', value: 'settings' }, { title: 'Go to work', value: 'work' }], initial: 1 }]);
             console.clear()
 
             eval(choosemenu.value)()
