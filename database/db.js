@@ -9,7 +9,7 @@ let connection = createConnection({
 })
 
 connection.connect((err) => {
-    if(err) {
+    if (err) {
         return console.log(chalk.red("Something went wrong while connecting to the database, check if you have installed a MySQL server on your PC and if you have also entered the correct data in the .env file."))
     }
 })
