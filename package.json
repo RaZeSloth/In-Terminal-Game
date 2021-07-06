@@ -18,7 +18,11 @@
   "homepage": "https://github.com/Iliannnn/In-Terminal-Game#readme",
   "dependencies": {
     "chalk": "^4.1.1",
+    "console-markdown": "^1.0.0",
     "dotenv": "^10.0.0",
+    "fs": "0.0.1-security",
+    "markdown-js": "0.0.4",
+    "mdlog": "^1.0.3",
     "mysql2": "^2.2.5",
     "prompts": "^2.4.1"
   }
