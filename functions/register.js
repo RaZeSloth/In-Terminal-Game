@@ -104,9 +104,6 @@ module.exports.register = function register() {
                   }, 500)
               }, 500)
           }, 500)
-
-          eval(menu.value)()
-
         }
         
       })
