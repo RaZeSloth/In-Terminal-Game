@@ -12,23 +12,11 @@ module.exports.logout = function logout() {
 
                 connection.query(`UPDATE Accounts SET active = '0' WHERE username = '${activeaccountusername}'`)
                 console.clear()
-                console.log(chalk.green('Successfully logged out!'))
-                console.log('↻ | Loading…')
-                setTimeout(async ()  => {
-                    console.clear()
-                    console.log(chalk.green('Successfully logged out!'))
-                    console.log('↷ | Loading…')
+                console.log(chalk.green('Successfully logged out!\n'))
+                let pressenter = await prompts([{ type: 'text', name: 'value', message: 'Press enter to go back to the menu ...'}])
+                console.clear()
+                menu()
 
-                    setTimeout(async ()  => {
-                        console.clear()
-                        console.log(chalk.green('Successfully logged out!'))
-                        console.log('↻ | Loading…')
-
-                        setTimeout(async ()  => {
-                            menu()
-                        }, 500)
-                    }, 500)
-                }, 500)
             })
 
         } else {
