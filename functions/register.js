@@ -75,37 +75,22 @@ module.exports.register = function register() {
 
     if (username.value && password.value && job.value) {
 
-      connection.query(`INSERT INTO Accounts VALUES ('${username.value}', '${password.value}', '${job.value}', '0', '1')`, async(err) => {
+      connection.query(`INSERT INTO Accounts VALUES ('${username.value}', '${password.value}', '${job.value}', '0', '1')`, async (err) => {
         if (err) {
 
           console.log(chalk.gray('- Register\n'))
           return console.log(chalk.red('\nSomething went wrong while processing the data to the database!\nPossible causes:\n- You have already created an account with this username.\n- You do not have a MySQL server on your PC.\n- You have not modified the data in the .env file as requested.\n'))
         } else {
 
-          console.log(chalk.gray('- Register\n'))
-          console.log(chalk.green('Your account has been successfully created!'))
-          console.log('↻ | Loading…')
-          setTimeout(async ()  => {
-              console.clear()
-              console.log(chalk.green('Your account has been successfully created!'))
-              console.log('↷ | Loading…')
-
-              setTimeout(async ()  => {
-                  console.clear()
-                  console.log(chalk.green('Your account has been successfully created!'))
-                  console.log('↻ | Loading…')
-
-                  setTimeout(async ()  => {
-                    console.clear()
-                    console.log(chalk.gray('- Menu\n'))
-                    let choosemenu = await prompts([{ type: 'select', name: 'value', message: 'What do you want to do now?', choices: [{ title: 'Log out', value: 'logout' }, { title: 'Settings', value: 'settings' }, { title: 'Go to work', value: 'work' }], initial: 1 }]);
-                    console.clear()
-                    eval(choosemenu.value)()
-                  }, 500)
-              }, 500)
-          }, 500)
+          console.log(chalk.green('Your account has been successfully created!\n'))
+          let pressenter = await prompts([{ type: 'text', name: 'value', message: 'Press enter to continue ...' }])
+          console.clear()
+          console.log(chalk.gray('- Menu\n'))
+          let choosemenu = await prompts([{ type: 'select', name: 'value', message: 'What do you want to do now?', choices: [{ title: 'Log out', value: 'logout' }, { title: 'Settings', value: 'settings' }, { title: 'Go to work', value: 'work' }], initial: 1 }]);
+          console.clear()
+          eval(choosemenu.value)()
         }
-        
+
       })
 
     } else {
