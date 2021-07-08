@@ -1,0 +1,31 @@
+{
+    "mcmanager": {
+        "locations": [
+            "McDonald's ",
+            "McDrive"
+        ]
+    },
+    "webdev": {
+        "locations": [
+            "Office",
+            "Home"
+        ]
+    },
+    "profgamer": {
+        "locations": [
+            "Home"
+        ]
+    },
+    "youtuber": {
+        "locations": [
+            "Home",
+            "Youtube Studio"
+        ]
+    },
+    "designer": {
+        "locations": [
+            "Office",
+            "Home"
+        ]
+    }
+}
