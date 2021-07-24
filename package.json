@@ -4,6 +4,8 @@
   "description": "This is a game that is made with JavaScript and works completely in your own terminal! Just download the needed dependencies, open the files in a terminal and let the game begin!",
   "main": "index.js",
   "scripts": {
+    "build": "npm i",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
