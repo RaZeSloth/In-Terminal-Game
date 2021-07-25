@@ -1,6 +1,6 @@
 require('dotenv').config();
 const { createConnection } = require('mysql2');
-
+const chalk = require("chalk");
 let connection = createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,

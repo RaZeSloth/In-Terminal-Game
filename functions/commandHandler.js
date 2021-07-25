@@ -1,4 +1,4 @@
-ms = require('ms'), fs = require('fs');
+const ms = require('ms'), fs = require('fs');
 
 module.exports.commandHandler = function commandHandler(commandsmap, aliasesmap) {
 

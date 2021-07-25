@@ -5,7 +5,7 @@ module.exports.run = async (chalk, prompts, connection) => {
         connection.query(`SELECT job from Accounts WHERE username = '${username}'`, async (err, rawjob) => {
             let job = rawjob[0].job
 
-            if (!job == 'designer') {
+            if (job != 'designer') {
 
             } else {
                 console.log(chalk.red('Only accessible as a Designer!'))

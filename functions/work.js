@@ -1,7 +1,7 @@
 module.exports.work = function work() {
     (async () => {
 
-        chalk = require('chalk'), prompts = require('prompts'), { connection } = require('../database/db'), { LOCATIONS } = require('../other/joblocations'), { commandHandler } = require('./commandHandler')
+       const chalk = require('chalk'), prompts = require('prompts'), { connection } = require('../database/db'), { LOCATIONS } = require('../other/joblocations'), { commandHandler } = require('./commandHandler')
 
 
         const commandsmap = new Map()

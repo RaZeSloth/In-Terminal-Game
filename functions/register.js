@@ -1,7 +1,7 @@
 module.exports.register = function register() {
   (async () => {
 
-    chalk = require('chalk'), prompts = require('prompts'), { connection } = require('../database/db'), { logout } = require('../functions/logout'), { settings } = require('../functions/settings'), { work } = require('../functions/work')
+    const chalk = require('chalk'), prompts = require('prompts'), { connection } = require('../database/db'), { logout } = require('../functions/logout'), { settings } = require('../functions/settings'), { work } = require('../functions/work')
 
     console.log(chalk.gray('- Register\n'))
     var username = await prompts([{ type: 'text', name: 'value', message: `Create your username:` }]);
@@ -16,7 +16,7 @@ module.exports.register = function register() {
         var username = await prompts([{ type: 'text', name: 'value', message: `Create your username:` }]);
         console.clear()
 
-        if (!username.value.length > 20 && !username.value.length <= 2) {
+        if (!(username.value.length > 20) && !(username.value.length <= 2)) {
           break;
         }
       }
@@ -38,7 +38,7 @@ module.exports.register = function register() {
         var password = await prompts([{ type: 'password', name: 'value', message: `Create your password:` }]);
         console.clear()
 
-        if (!password.value.length > 20 && !password.value.length < 8) {
+        if (!(password.value.length > 20) && !(password.value.length < 8)) {
           break;
         }
       }

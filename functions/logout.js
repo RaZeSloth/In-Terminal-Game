@@ -1,7 +1,7 @@
 module.exports.logout = function logout() {
     (async () => {
 
-        chalk = require('chalk'), prompts = require('prompts'), { connection } = require('../database/db'), { menu } = require('../functions/menu'), { settings } = require('../functions/settings'), { work } = require('../functions/work')
+       const chalk = require('chalk'), prompts = require('prompts'), { connection } = require('../database/db'), { menu } = require('../functions/menu'), { settings } = require('../functions/settings'), { work } = require('../functions/work')
 
         let sure = await prompts([{ type: 'toggle', name: 'value', message: 'Are u sure you want to log out?', initial: true, active: 'yes', inactive: 'no' }])
 

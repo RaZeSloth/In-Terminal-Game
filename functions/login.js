@@ -1,7 +1,7 @@
 module.exports.login = function login() {
     (async () => {
 
-        chalk = require('chalk'), prompts = require('prompts'), { connection } = require('../database/db'), { logout } = require('../functions/logout'), { settings } = require('../functions/settings'), { work } = require('../functions/work'), { menu } = require('../functions/menu')
+       const chalk = require('chalk'), prompts = require('prompts'), { connection } = require('../database/db'), { logout } = require('../functions/logout'), { settings } = require('../functions/settings'), { work } = require('../functions/work'), { menu } = require('../functions/menu')
 
         console.log(chalk.gray('- Login\n'))
         var username = await prompts([{ type: 'text', name: 'value', message: `Username:` }]);
